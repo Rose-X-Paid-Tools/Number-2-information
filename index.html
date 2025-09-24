@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙽𝚄𝙼𝙱𝙴𝚁 𝙳𝙴𝚃𝙰𝙸𝙻</title>
+    <title>Hacker Phone Lookup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -361,8 +361,8 @@
     
     <div class="container">
         <div class="header">
-            <h1>PHONE NUMBER INFO</h1>
-            <p>ENTER PASSWORD TO ACCESS</p>
+            <h1>PHONE NUMBER LOOKUP</h1>
+            <p>ENTER PASSWORD TO ACCESS SYSTEM</p>
         </div>
         
         <div class="auth-container" id="auth-container">
@@ -377,7 +377,7 @@
             </div>
             
             <button id="login-btn">
-                <span class="blink">UNLOCK 🔐</span>
+                <span class="blink">ACCESS SYSTEM</span>
             </button>
         </div>
         
@@ -398,7 +398,7 @@
             </div>
             
             <button id="lookup-btn">
-                <span class="blink">CHECK</span>
+                <span class="blink">INITIATE SCAN</span>
             </button>
         </div>
         
@@ -415,7 +415,7 @@
                 <div class="terminal-text">
                     > CONNECTING TO DATABASE...<br>
                     > INITIATING NUMBER SCAN...<br>
-                    > BYPASSING SECURITY Rose-X Tools...<br>
+                    > BYPASSING SECURITY PROTOCOLS...<br>
                     > RETRIEVING TARGET INFORMATION...
                 </div>
                 <div class="progress-bar">
@@ -431,7 +431,7 @@
         
         <div class="redirect-info" id="redirect-info">
             <p>> REDIRECTING TO TARGET INFORMATION...</p>
-            <div class="owner-text">Owner By Rose-X</div>
+            <div class="owner-text">Owner By Sarkar</div>
         </div>
         
         <div class="webview-container" id="webview-container">
@@ -476,7 +476,7 @@
             
             // Create enhanced falling code animation
             function createCodeRain() {
-                const characters = '０１０１０１０１０１０１０１０１０１０１０１０１０１０１０１０１ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ０１２３４５６７８９＄％＾＆＊（）';
+                const characters = '01010101010101010101010101010101ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$%^&*()';
                 const screenWidth = window.innerWidth;
                 
                 for (let i = 0; i < 150; i++) {
@@ -524,7 +524,7 @@
                     
                     // Log out user if password expired
                     setTimeout(() => {
-                        alert("PASSWORD HAS EXPIRED PLEASE CONTACT ADMIN FOR A NEW PASSWORD");
+                        alert("Password has expired. Please contact admin for a new password.");
                         localStorage.removeItem('password');
                         localStorage.removeItem('passwordExpiration');
                         window.location.reload();
@@ -587,17 +587,17 @@
                         });
                         
                         if (!validPassword) {
-                            throw new Error('Iɴᴠᴀʟɪᴅ ᴘᴀssᴡᴏʀᴅ');
+                            throw new Error('Invalid password');
                         }
                         
                         // Check if password is active
                         if (!passwordData.active) {
-                            throw new Error('Pᴀssᴡᴏʀᴅ ʜᴀs ʙᴇᴇɴ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ ʙʏ ᴀᴅᴍɪɴ');
+                            throw new Error('Password has been deactivated by admin');
                         }
                         
                         // Check if password is expired
                         if (passwordData.expiration && Date.now() > passwordData.expiration) {
-                            throw new Error('Pᴀssᴡᴏʀᴅ ʜᴀs ᴇxᴘɪʀᴇᴅ');
+                            throw new Error('Password has expired');
                         }
                         
                         // Login successful - save to localStorage
@@ -662,7 +662,7 @@
                     loading.style.display = 'none';
                     
                     // Construct the API URL with the NEW endpoint
-                    const apiEndpoint = `https://swapi-num-api.onrender.com/info?api_key=swapipy&mobile=${phoneNumber}`;
+                    const apiEndpoint = `https://trial-api-by-deba.onrender.com/info?key=deba_beast&type=mobile&term=${phoneNumber}`;
                     
                     // Show redirect information
                     redirectInfo.style.display = 'block';
